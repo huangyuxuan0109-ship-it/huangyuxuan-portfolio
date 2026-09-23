@@ -1,0 +1,24 @@
+# Local generation and preview files
+__pycache__/
+*.pyc
+/tmp/
+/output/
+/assets/
+
+# Local design/build helper scripts
+/*.py
+
+# Working notes and superseded files
+/00_作品集展示顺序.md
+/舌尖上的地理课_网页交互与动效说明.md
+/project-3.original.html
+/pixelo_3th_20200313_纯图版.pdf
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local Codex metadata
+/.codex/
+/.agents/

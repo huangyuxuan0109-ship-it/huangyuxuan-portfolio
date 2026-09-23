@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="黄虞萱海报设计作品，涵盖地产、教育、文具与游戏视觉。" />
+    <title>海报设计作品 — 黄虞萱</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffe72e'/%3E%3Ccircle cx='49' cy='15' r='15' fill='%230875df'/%3E%3Cpath d='M14 13h22c10 0 16 6 16 15S46 43 36 43H25v10H14V13zm11 9v12h10c4 0 6-2 6-6s-2-6-6-6H25z' fill='%23080808'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+      .poster-page {
+        --poster-bg: #f5f4f0;
+        --poster-frame: #e7e6e1;
+        --poster-line: #cbc9c2;
+        --poster-muted: #706f69;
+        --poster-accent: #f06f61;
+        min-height: 100vh;
+        background: var(--poster-bg);
+        color: #0b0b0b;
+      }
+      .poster-toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 25;
+        display: grid;
+        grid-template-columns: minmax(150px, .8fr) minmax(420px, 2fr) auto;
+        align-items: center;
+        gap: clamp(18px, 3vw, 48px);
+        padding: 18px 4.5%;
+        border-bottom: 1px solid var(--poster-line);
+        background: rgb(245 244 240 / 94%);
+        backdrop-filter: blur(16px);
+      }
+      .poster-toolbar-title { margin: 0; font-size: clamp(1.25rem, 2vw, 2rem); line-height: 1; letter-spacing: -.04em; }
+      .poster-toolbar-title small { color: var(--poster-muted); font-size: .52em; font-weight: 400; letter-spacing: .02em; }
+      .poster-tabs { display: flex; align-items: center; gap: clamp(8px, 1.4vw, 22px); }
+      .poster-tab {
+        min-height: 42px;
+        padding: 7px 0;
+        border: 0;
+        border-bottom: 1px solid transparent;
+        background: transparent;
+        color: #77756f;
+        font: inherit;
+        font-size: clamp(.9rem, 1.15vw, 1.05rem);
+        white-space: nowrap;
+        cursor: pointer;
+        transition: color .25s ease, border-color .25s ease;
+      }
+      .poster-tab:hover,
+      .poster-tab:focus-visible { color: #0b0b0b; }
+      .poster-tab[aria-selected="true"] { color: var(--poster-accent); border-bottom-color: var(--poster-accent); }
+      .poster-total { color: var(--poster-muted); font-size: .8rem; letter-spacing: .09em; white-space: nowrap; }
+      .poster-content { padding: clamp(62px, 8vw, 118px) 4.5% clamp(110px, 15vw, 220px); }
+      .poster-group-head {
+        display: grid;
+        grid-template-columns: minmax(76px, 130px) 1fr auto;
+        align-items: end;
+        gap: 20px;
+        margin-bottom: clamp(36px, 5vw, 72px);
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--poster-line);
+      }
+      .poster-index { color: var(--poster-accent); font-size: .75rem; letter-spacing: .12em; }
+      .poster-group-head h1 { margin: 0; font-size: clamp(3rem, 7vw, 7rem); line-height: .8; letter-spacing: -.07em; }
+      .poster-group-head h1 small { display: block; margin-top: 18px; color: var(--poster-muted); font-size: .14em; font-weight: 400; letter-spacing: .12em; }
+      .poster-count { color: var(--poster-muted); font-size: .78rem; letter-spacing: .08em; }
+      .poster-series + .poster-series { margin-top: clamp(78px, 10vw, 150px); }
+      .poster-series-head { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 22px; color: var(--poster-muted); font-size: .76rem; letter-spacing: .1em; }
+      .poster-series-head h2 { margin: 0; color: #0b0b0b; font-size: inherit; font-weight: 400; letter-spacing: .1em; }
+      .poster-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(26px, 3.2vw, 52px) clamp(12px, 1.5vw, 24px); align-items: start; }
+      .poster-card {
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        text-align: left;
+        cursor: zoom-in;
+        opacity: 0;
+        animation: poster-card-in .48s cubic-bezier(.2,.65,.2,1) forwards;
+        animation-delay: calc(var(--card-order, 0) * 55ms);
+      }
+      .poster-frame { aspect-ratio: 3 / 4; display: grid; place-items: center; overflow: hidden; padding: clamp(8px, 1.1vw, 18px); background: var(--poster-frame); }
+      .poster-frame img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .38s cubic-bezier(.2,.65,.2,1); }
+      .poster-card:hover .poster-frame img { transform: scale(1.025); }
+      .poster-card:focus-visible { outline: 2px solid var(--poster-accent); outline-offset: 5px; }
+      .poster-caption { min-height: 82px; display: grid; grid-template-columns: 1fr auto; align-content: start; gap: 7px 12px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #0b0b0b; }
+      .poster-caption strong { font-size: clamp(.9rem, 1.15vw, 1.05rem); font-weight: 500; }
+      .poster-caption > span { color: var(--poster-muted); font-size: .74rem; }
+      .poster-caption small { grid-column: 1 / -1; color: var(--poster-muted); font-size: .78rem; }
+      .poster-ending { margin-top: clamp(130px, 18vw, 270px); padding-top: 16px; border-top: 1px solid var(--poster-line); display: flex; justify-content: space-between; align-items: flex-end; }
+      .poster-ending span { color: var(--poster-muted); font-size: .75rem; letter-spacing: .12em; }
+      .poster-ending a { color: #0b0b0b; font-size: clamp(1.2rem, 2vw, 2rem); text-decoration: none; border-bottom: 1px solid #0b0b0b; }
+      .poster-ending a:hover,
+      .poster-ending a:focus-visible { color: var(--poster-accent); border-color: var(--poster-accent); }
+      .poster-lightbox { width: 100vw; max-width: none; height: 100vh; max-height: none; margin: 0; padding: 0; border: 0; background: #090909; color: #f5f4f0; }
+      .poster-lightbox::backdrop { background: rgb(0 0 0 / 92%); }
+      .poster-lightbox-shell { min-height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
+      .poster-lightbox-head,
+      .poster-lightbox-foot { position: sticky; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 24px; background: rgb(9 9 9 / 94%); }
+      .poster-lightbox-head { top: 0; border-bottom: 1px solid #303030; }
+      .poster-lightbox-foot { bottom: 0; border-top: 1px solid #303030; }
+      .poster-lightbox-title { margin: 0; font-size: 1rem; font-weight: 400; }
+      .poster-lightbox-meta { color: #8d8d88; font-size: .76rem; letter-spacing: .08em; }
+      .poster-lightbox-close,
+      .poster-lightbox-nav { min-width: 44px; min-height: 44px; border: 1px solid #454545; background: transparent; color: #f5f4f0; font: inherit; cursor: pointer; }
+      .poster-lightbox-close { border: 0; font-size: 1.75rem; }
+      .poster-lightbox-close:hover,
+      .poster-lightbox-close:focus-visible,
+      .poster-lightbox-nav:hover,
+      .poster-lightbox-nav:focus-visible { color: var(--poster-accent); border-color: var(--poster-accent); }
+      .poster-lightbox-stage { min-height: 0; overflow: auto; overscroll-behavior: contain; padding: clamp(22px, 4vw, 64px); text-align: center; }
+      .poster-lightbox-stage img { display: block; width: auto; max-width: min(94vw, 1800px); height: auto; max-height: calc(100vh - 190px); margin: 0 auto; object-fit: contain; }
+      .poster-lightbox-stage.is-long img { width: min(94vw, 1200px); max-height: none; }
+      .poster-lightbox-actions { display: flex; gap: 10px; }
+      body:has(.poster-lightbox[open]) { overflow: hidden; }
+      @keyframes poster-card-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+      @media (max-width: 820px) {
+        .poster-toolbar { grid-template-columns: 1fr; gap: 10px; padding: 14px 18px 10px; }
+        .poster-toolbar-title { display: flex; justify-content: space-between; align-items: baseline; }
+        .poster-tabs { overflow-x: auto; margin-right: -18px; padding-right: 18px; scrollbar-width: none; }
+        .poster-tabs::-webkit-scrollbar { display: none; }
+        .poster-tab { flex: 0 0 auto; min-height: 44px; }
+        .poster-total { display: none; }
+        .poster-content { padding: 54px 18px 110px; }
+        .poster-group-head { grid-template-columns: auto 1fr; gap: 14px; }
+        .poster-group-head .poster-count { display: none; }
+        .poster-group-head h1 { font-size: clamp(3.2rem, 15vw, 6rem); }
+        .poster-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 12px; }
+        .poster-frame { padding: 8px; }
+        .poster-caption { min-height: 94px; }
+        .poster-caption strong { font-size: .9rem; }
+        .poster-ending { display: grid; gap: 30px; }
+        .poster-lightbox-head,
+        .poster-lightbox-foot { padding: 10px 12px; }
+        .poster-lightbox-head { align-items: flex-start; }
+        .poster-lightbox-meta { display: block; margin-top: 5px; }
+        .poster-lightbox-stage { padding: 18px 10px; }
+        .poster-lightbox-stage img { max-height: calc(100vh - 160px); }
+        .poster-lightbox-stage.is-long img { width: 100%; max-height: none; }
+      }
+      @media (max-width: 340px) {
+        .poster-grid { grid-template-columns: 1fr; }
+        .poster-frame { aspect-ratio: 4 / 5; }
+        .poster-caption { min-height: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .poster-card { opacity: 1; animation: none; }
+        .poster-frame img,
+        .poster-tab { transition: none; }
+      }
+    </style>
+    <link rel="stylesheet" href="./project-11-pop.css" />
+  </head>
+  <body class="poster-pop-body">
+    <main class="page-shell">
+      <header class="site-header">
+        <div class="site-title" aria-label="DESIGN"><span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <div class="nav-links"><a href="./index.html">首页</a><span aria-hidden="true">/</span><a href="./portfolio.html" class="active">作品</a><span aria-hidden="true">/</span><a href="./about.html">关于我</a></div>
+          <a class="nav-credit nav-back" href="./portfolio.html" aria-label="返回作品页">← 返回</a>
+        </nav>
+      </header>
+
+      <div class="poster-ticker" aria-label="作品集信息">
+        <span>IDEA · DESIGN · CREATIVE</span>
+        <span>POSTER ARCHIVE</span>
+      </div>
+
+      <section class="poster-page" data-category="estate" aria-label="海报设计作品">
+        <div class="poster-toolbar">
+          <h1 class="poster-toolbar-title">POSTER <small>海报设计</small></h1>
+          <div class="poster-tabs" role="tablist" aria-label="海报作品分类">
+            <button class="poster-tab" type="button" role="tab" aria-selected="true" data-category="estate">01 地产</button>
+            <button class="poster-tab" type="button" role="tab" aria-selected="false" data-category="education">02 教育</button>
+            <button class="poster-tab" type="button" role="tab" aria-selected="false" data-category="stationery">03 文具</button>
+            <button class="poster-tab" type="button" role="tab" aria-selected="false" data-category="game">04 游戏</button>
+          </div>
+        </div>
+        <div class="poster-content">
+          <div id="poster-gallery" role="tabpanel" aria-live="polite"></div>
+          <footer class="poster-ending"><span>POSTER ARCHIVE / HUANG YUXUAN</span><a href="./portfolio.html">返回作品目录 ↗</a></footer>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="poster-lightbox" id="poster-lightbox" aria-labelledby="poster-lightbox-title">
+      <div class="poster-lightbox-shell">
+        <header class="poster-lightbox-head"><div><h2 class="poster-lightbox-title" id="poster-lightbox-title"></h2><span class="poster-lightbox-meta" id="poster-lightbox-meta"></span></div><button class="poster-lightbox-close" type="button" aria-label="关闭大图">×</button></header>
+        <div class="poster-lightbox-stage"><img id="poster-lightbox-image" alt="" /></div>
+        <footer class="poster-lightbox-foot"><span class="poster-lightbox-meta" id="poster-lightbox-progress"></span><div class="poster-lightbox-actions"><button class="poster-lightbox-nav" type="button" data-lightbox-nav="prev" aria-label="上一张">←</button><button class="poster-lightbox-nav" type="button" data-lightbox-nav="next" aria-label="下一张">→</button></div></footer>
+      </div>
+    </dialog>
+
+    <script>
+      (() => {
+        const base = './project-11-assets/posters/';
+        const categories = {
+          estate: { index: '01 / 04', zh: '地产', en: 'REAL ESTATE', count: 4, groups: [
+            { title: '建发 · 品牌传播', en: 'JIANFA', items: [
+              ['estate-01.webp', '建发 · 国庆活动', '横版传播海报'], ['estate-02.webp', '建发 · 焕新计划', '横版传播海报'], ['estate-03.webp', '建发 · 热销', '竖版单图'], ['estate-04.webp', '建发 · 收官', '横版传播海报']
+            ] }
+          ] },
+          education: { index: '02 / 04', zh: '教育', en: 'EDUCATION', count: 10, groups: [
+            { title: '独立营 · 招生系列', en: 'INDEPENDENT CAMP', items: [
+              ['education-01.webp', '独立营招生海报一 · 1', '系列 1 / 2'], ['education-02.webp', '独立营招生海报一 · 2', '长图 · 系列 2 / 2'], ['education-03.webp', '独立营招生海报二 · 1', '系列 1 / 2'], ['education-04.webp', '独立营招生海报二 · 2', '系列 2 / 2'], ['education-05.webp', '独立营招生海报三 · 1', '系列 1 / 2'], ['education-06.webp', '独立营招生海报三 · 2', '长图 · 系列 2 / 2']
+            ] },
+            { title: '社区招生 · 系列', en: 'COMMUNITY', items: [
+              ['education-07.webp', '社区招生海报 · 1', '系列 1 / 3'], ['education-08.webp', '社区招生海报 · 2', '系列 2 / 3'], ['education-09.webp', '社区招生海报 · 3', '系列 3 / 3']
+            ] },
+            { title: 'AILD课程介绍', en: 'COURSE INTRODUCTION', items: [
+              ['education-10.webp', 'AILD课程介绍', '长图 · 点击查看完整内容']
+            ] }
+          ] },
+          stationery: { index: '03 / 04', zh: '文具', en: 'STATIONERY', count: 5, groups: [
+            { title: '单品海报', en: 'PRODUCT', items: [
+              ['stationery-01.webp', '单品海报 · 1', '产品系列 1 / 3'], ['stationery-02.webp', '单品海报 · 2', '产品系列 2 / 3'], ['stationery-03.webp', '单品海报 · 3', '产品系列 3 / 3']
+            ] },
+            { title: '品类海报', en: 'CATEGORY', items: [
+              ['stationery-04.webp', '品类海报 · 1', '品类系列 1 / 2'], ['stationery-05.webp', '品类海报 · 2', '品类系列 2 / 2']
+            ] }
+          ] },
+          game: { index: '04 / 04', zh: '游戏', en: 'GAME VISUAL', count: 15, groups: [
+            { title: '三国冰河时代', en: 'ICE AGE', items: [
+              ['game-01.webp', '三国冰河时代 · 1', '系列 1 / 8'], ['game-02.webp', '三国冰河时代 · 2', '系列 2 / 8'], ['game-03.webp', '三国冰河时代 · 3', '系列 3 / 8'], ['game-04.webp', '三国冰河时代 · 4', '系列 4 / 8 · 横版'], ['game-05-transparent.png', '三国冰河时代 · 5', '系列 5 / 8'], ['game-06-transparent.png', '三国冰河时代 · 6', '系列 6 / 8'], ['game-07-transparent.png', '三国冰河时代 · 7', '系列 7 / 8'], ['game-08-transparent.png', '三国冰河时代 · 8', '系列 8 / 8']
+            ] },
+            { title: '三角洲行动', en: 'DELTA FORCE', items: [
+              ['game-09.webp', '三角洲行动 · 1', '系列 1 / 5'], ['game-10.webp', '三角洲行动 · 2', '系列 2 / 5'], ['game-11.webp', '三角洲行动 · 3', '系列 3 / 5'], ['game-12.webp', '三角洲行动 · 4', '系列 4 / 5'], ['game-13.webp', '三角洲行动 · 5', '系列 5 / 5']
+            ] },
+            { title: '率土之滨', en: 'INFINITE BORDERS', items: [
+              ['game-14-transparent.png', '率土之滨 · 1', '系列 1 / 2'], ['game-15.webp', '率土之滨 · 2', '系列 2 / 2']
+            ] }
+          ] }
+        };
+
+        const posterPage = document.querySelector('.poster-page');
+        const tabs = [...document.querySelectorAll('.poster-tab')];
+        const gallery = document.getElementById('poster-gallery');
+        const lightbox = document.getElementById('poster-lightbox');
+        const lightboxImage = document.getElementById('poster-lightbox-image');
+        const lightboxTitle = document.getElementById('poster-lightbox-title');
+        const lightboxMeta = document.getElementById('poster-lightbox-meta');
+        const lightboxProgress = document.getElementById('poster-lightbox-progress');
+        const lightboxStage = lightbox.querySelector('.poster-lightbox-stage');
+        let currentCategory = 'estate';
+        let currentItems = [];
+        let currentIndex = 0;
+
+        const flattenItems = (category) => category.groups.flatMap((group) => group.items.map((item) => ({ item, group })));
+
+        function renderCategory(key) {
+          const category = categories[key];
+          currentCategory = key;
+          posterPage.dataset.category = key;
+          currentItems = flattenItems(category);
+          let globalIndex = 0;
+          const groups = category.groups.map((group) => {
+            const cards = group.items.map((item, order) => {
+              const itemIndex = globalIndex++;
+              const number = String(itemIndex + 1).padStart(2, '0');
+              const eager = itemIndex < 4 ? 'eager' : 'lazy';
+              const isLongPreview = ['education-02.webp', 'education-06.webp', 'education-10.webp'].includes(item[0]);
+              const isCompleteFit = item[0] === 'estate-03.webp';
+              const isGameCentered = ['game-05-transparent.png', 'game-06-transparent.png', 'game-07-transparent.png', 'game-08-transparent.png', 'game-14-transparent.png'].includes(item[0]);
+              const cardClasses = ['poster-card', isLongPreview && 'is-long-preview', isCompleteFit && 'is-complete-fit', isGameCentered && 'is-game-centered'].filter(Boolean).join(' ');
+              return `<button class="${cardClasses}" style="--card-order:${order}" type="button" data-item-index="${itemIndex}" data-asset="${item[0]}" aria-label="查看${item[1]}完整图片"><span class="poster-frame"><img src="${base + item[0]}" alt="${item[1]}" loading="${eager}" decoding="async" /></span><span class="poster-caption"><strong>${item[1]}</strong><span>${number}</span><small>${item[2]}</small></span></button>`;
+            }).join('');
+            return `<section class="poster-series"><div class="poster-series-head"><h2>${group.title}</h2><span>${group.en} / ${group.items.length}</span></div><div class="poster-grid">${cards}</div></section>`;
+          }).join('');
+          gallery.innerHTML = `<section class="poster-group" aria-label="${category.zh}海报"><div class="poster-group-head"><span class="poster-index">${category.index}</span><h1><span>${category.zh}</span><small>${category.en}</small></h1><span class="poster-count">${category.count} WORKS</span></div>${groups}</section>`;
+          tabs.forEach((tab) => tab.setAttribute('aria-selected', String(tab.dataset.category === key)));
+          history.replaceState(null, '', `#${key}`);
+        }
+
+        function showLightbox(index) {
+          currentIndex = (index + currentItems.length) % currentItems.length;
+          const { item, group } = currentItems[currentIndex];
+          lightboxImage.src = base + item[0];
+          lightboxImage.alt = item[1];
+          lightboxTitle.textContent = item[1];
+          lightboxMeta.textContent = `${categories[currentCategory].zh} / ${group.title}`;
+          lightboxProgress.textContent = `${String(currentIndex + 1).padStart(2, '0')} / ${String(currentItems.length).padStart(2, '0')}`;
+          lightboxStage.classList.remove('is-long');
+          lightboxStage.scrollTop = 0;
+        }
+
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', () => renderCategory(tab.dataset.category));
+          tab.addEventListener('keydown', (event) => {
+            if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+            event.preventDefault();
+            let nextIndex = index;
+            if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+            if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+            if (event.key === 'Home') nextIndex = 0;
+            if (event.key === 'End') nextIndex = tabs.length - 1;
+            renderCategory(tabs[nextIndex].dataset.category);
+            tabs[nextIndex].focus();
+          });
+        });
+
+        gallery.addEventListener('click', (event) => {
+          const card = event.target.closest('.poster-card');
+          if (!card) return;
+          showLightbox(Number(card.dataset.itemIndex));
+          lightbox.showModal();
+        });
+        lightboxImage.addEventListener('load', () => lightboxStage.classList.toggle('is-long', lightboxImage.naturalHeight / lightboxImage.naturalWidth > 2.4));
+        lightbox.querySelector('.poster-lightbox-close').addEventListener('click', () => lightbox.close());
+        lightbox.querySelector('[data-lightbox-nav="prev"]').addEventListener('click', () => showLightbox(currentIndex - 1));
+        lightbox.querySelector('[data-lightbox-nav="next"]').addEventListener('click', () => showLightbox(currentIndex + 1));
+        lightbox.addEventListener('click', (event) => { if (event.target === lightbox) lightbox.close(); });
+        lightbox.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowLeft') showLightbox(currentIndex - 1);
+          if (event.key === 'ArrowRight') showLightbox(currentIndex + 1);
+        });
+
+        const initial = location.hash.replace('#', '');
+        renderCategory(categories[initial] ? initial : 'estate');
+        window.addEventListener('hashchange', () => {
+          const key = location.hash.replace('#', '');
+          if (categories[key] && key !== currentCategory) renderCategory(key);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="黄虞萱画册设计作品，涵盖教育课程、课后服务与科技企业宣传。" />
+    <title>画册设计作品 — 黄虞萱</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffe22f'/%3E%3Ccircle cx='49' cy='15' r='15' fill='%231975df'/%3E%3Cpath d='M13 12h22c11 0 17 5 17 14 0 6-3 10-8 12 7 2 10 6 10 13H43c0-6-3-8-10-8h-9v9H13V12zm11 9v13h10c5 0 7-2 7-7 0-4-2-6-7-6H24z' fill='%23080808'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./project-12.css" />
+    <script src="./project-12.js" defer></script>
+  </head>
+  <body class="brochure-page">
+    <main class="page-shell">
+      <header class="site-header">
+        <div class="site-title" aria-label="DESIGN"><span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <div class="nav-links">
+            <a href="./index.html">首页</a><span aria-hidden="true">/</span>
+            <a href="./portfolio.html" class="active">作品</a><span aria-hidden="true">/</span>
+            <a href="./about.html">关于我</a>
+          </div>
+          <a class="nav-credit nav-back" href="./portfolio.html" aria-label="返回作品页">← 返回</a>
+        </nav>
+      </header>
+
+      <div class="brochure-ticker" aria-label="作品集信息">
+        <span>IDEA · DESIGN · CREATIVE</span>
+        <span>BROCHURE ARCHIVE</span>
+      </div>
+
+      <section class="brochure-hero" aria-labelledby="brochure-page-title">
+        <span class="brochure-shape brochure-shape-yellow" aria-hidden="true"></span>
+        <span class="brochure-shape brochure-shape-blue" aria-hidden="true"></span>
+        <span class="brochure-shape brochure-shape-pink" aria-hidden="true"></span>
+        <p class="brochure-kicker">02 / SELECTED BROCHURES</p>
+        <h1 id="brochure-page-title"><span>BROCHURE</span><small>画册设计</small></h1>
+        <p class="brochure-lead">五套画册统一陈列，点击封面即可在当前页面切换查看。</p>
+      </section>
+
+      <section class="brochure-covers" aria-labelledby="brochure-cover-title">
+        <header class="brochure-section-head">
+          <h2 id="brochure-cover-title">选择一本画册 <small>SELECT A BROCHURE</small></h2>
+          <span>05 PROJECTS</span>
+        </header>
+        <div class="brochure-cover-grid">
+          <button class="brochure-card is-active" type="button" data-brochure="course" aria-pressed="true">
+            <span class="brochure-card-number">01</span>
+            <span class="brochure-cover-frame crop-right"><img src="./project-12-assets/course-01.jpg" alt="羊博士的奇妙实验室课程介绍封面" /></span>
+            <span class="brochure-card-copy"><strong>羊博士的奇妙实验室</strong><small>教育 · 课程介绍</small></span>
+          </button>
+          <button class="brochure-card" type="button" data-brochure="service" aria-pressed="false">
+            <span class="brochure-card-number">02</span>
+            <span class="brochure-cover-frame crop-right"><img src="./project-12-assets/service-1.jpg" alt="中小学素质教育课后服务解决方案封面" /></span>
+            <span class="brochure-card-copy"><strong>课后服务解决方案</strong><small>教育 · 解决方案</small></span>
+          </button>
+          <button class="brochure-card" type="button" data-brochure="collaboration" aria-pressed="false">
+            <span class="brochure-card-number">03</span>
+            <span class="brochure-cover-frame crop-left"><img src="./project-12-assets/collaboration-1.jpg" alt="乐享协同服务平台画册封面" /></span>
+            <span class="brochure-card-copy"><strong>乐享协同服务平台</strong><small>科技 · 平台介绍</small></span>
+          </button>
+          <button class="brochure-card" type="button" data-brochure="xingyuanda" aria-pressed="false">
+            <span class="brochure-card-number">04</span>
+            <span class="brochure-cover-frame crop-right"><img src="./project-12-assets/xingyuanda-01.jpg" alt="兴远达宣传册封面" /></span>
+            <span class="brochure-card-copy"><strong>兴远达宣传册</strong><small>科技 · 企业宣传</small></span>
+          </button>
+          <button class="brochure-card" type="button" data-brochure="water" aria-pressed="false">
+            <span class="brochure-card-number">05</span>
+            <span class="brochure-cover-frame crop-right"><img src="./project-12-assets/water-1.jpg" alt="直饮水系统工程方案封面" /></span>
+            <span class="brochure-card-copy"><strong>直饮水系统工程方案</strong><small>水务 · 工程方案</small></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="brochure-viewer-section" id="brochure-viewer" aria-labelledby="brochure-detail-title">
+        <div class="brochure-tabs" role="tablist" aria-label="快速切换画册">
+          <button class="brochure-tab is-active" type="button" role="tab" data-brochure="course" aria-selected="true">课程介绍</button>
+          <button class="brochure-tab" type="button" role="tab" data-brochure="service" aria-selected="false">课后服务</button>
+          <button class="brochure-tab" type="button" role="tab" data-brochure="collaboration" aria-selected="false">乐享平台</button>
+          <button class="brochure-tab" type="button" role="tab" data-brochure="xingyuanda" aria-selected="false">兴远达</button>
+          <button class="brochure-tab" type="button" role="tab" data-brochure="water" aria-selected="false">水务方案</button>
+        </div>
+        <div class="brochure-detail-head">
+          <div>
+            <p id="brochure-detail-index">01 / EDUCATION</p>
+            <h2 id="brochure-detail-title">羊博士的奇妙实验室</h2>
+            <span id="brochure-detail-meta">课程介绍 · 10 PAGES</span>
+          </div>
+          <p>点击左右按钮、数字页码或在图片上滑动浏览；点击图片可查看完整大图。</p>
+        </div>
+        <div class="brochure-page-viewer" tabindex="0" aria-label="画册页面浏览器">
+          <button class="brochure-spread" id="brochure-zoom" type="button" aria-label="查看当前页面大图">
+            <span class="brochure-loader" aria-hidden="true"></span>
+            <img id="brochure-page-image" src="./project-12-assets/course-01.jpg" alt="羊博士的奇妙实验室第1页" />
+            <span class="brochure-view-hint">点击查看大图</span>
+          </button>
+          <p class="brochure-image-error" id="brochure-image-error" role="alert" hidden>当前页面暂时无法加载，请切换后重试。</p>
+          <div class="brochure-controls">
+            <button type="button" id="brochure-prev" aria-label="上一页">←</button>
+            <span id="brochure-page-status" aria-live="polite">01 / 10</span>
+            <button type="button" id="brochure-next" aria-label="下一页">→</button>
+          </div>
+          <div class="brochure-page-index" id="brochure-page-index" aria-label="选择画册页码"></div>
+        </div>
+        <footer class="brochure-ending">
+          <span>END / BROCHURE COLLECTION</span>
+          <a href="./portfolio.html">返回作品目录 →</a>
+        </footer>
+      </section>
+    </main>
+
+    <dialog class="brochure-lightbox" id="brochure-lightbox" aria-labelledby="brochure-lightbox-title">
+      <div class="brochure-lightbox-head">
+        <div><h2 id="brochure-lightbox-title">羊博士的奇妙实验室</h2><span id="brochure-lightbox-status">01 / 10</span></div>
+        <button type="button" id="brochure-lightbox-close" aria-label="关闭大图">×</button>
+      </div>
+      <div class="brochure-lightbox-stage"><img id="brochure-lightbox-image" src="./project-12-assets/course-01.jpg" alt="羊博士的奇妙实验室第1页大图" /></div>
+      <div class="brochure-lightbox-controls">
+        <button type="button" id="brochure-lightbox-prev" aria-label="上一页大图">← 上一页</button>
+        <button type="button" id="brochure-lightbox-next" aria-label="下一页大图">下一页 →</button>
+      </div>
+    </dialog>
+  </body>
+</html>

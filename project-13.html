@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="黄虞萱包装设计作品，涵盖礼盒、教育套装与文具包装。" />
+    <title>包装设计作品 — 黄虞萱</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffe733'/%3E%3Cpath d='M11 12h24c12 0 19 7 19 17S47 46 35 46H24v8H11V12zm13 10v14h10c5 0 7-3 7-7s-2-7-7-7H24z' fill='%23111111'/%3E%3Ccircle cx='51' cy='13' r='11' fill='%23156ee8'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./project-13.css" />
+    <script src="./project-13.js" defer></script>
+  </head>
+  <body class="packaging-body">
+    <main class="page-shell">
+      <header class="site-header">
+        <div class="site-title" aria-label="DESIGN"><span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <div class="nav-links"><a href="./index.html">首页</a><span aria-hidden="true">/</span><a href="./portfolio.html" class="active">作品</a><span aria-hidden="true">/</span><a href="./about.html">关于我</a></div>
+          <a class="nav-credit nav-back" href="./portfolio.html" aria-label="返回作品页">← 返回</a>
+        </nav>
+      </header>
+
+      <div class="packaging-ticker" aria-label="作品集信息">
+        <span>IDEA · DESIGN · CREATIVE</span>
+        <span>PACKAGING ARCHIVE</span>
+      </div>
+
+      <section class="packaging-page" aria-label="包装设计作品">
+        <header class="packaging-toolbar">
+          <h1 class="packaging-toolbar-title">PACKAGING <small>包装设计</small></h1>
+          <nav class="packaging-filters" aria-label="包装作品分类">
+            <button type="button" class="packaging-filter is-active" data-filter="all" aria-pressed="true">00 全部</button>
+            <button type="button" class="packaging-filter" data-filter="gift" aria-pressed="false">01 礼盒</button>
+            <button type="button" class="packaging-filter" data-filter="education" aria-pressed="false">02 教育</button>
+            <button type="button" class="packaging-filter" data-filter="stationery" aria-pressed="false">03 文具</button>
+          </nav>
+        </header>
+
+        <div class="packaging-content">
+          <div id="packaging-gallery"></div>
+          <footer class="packaging-ending"><span>PACKAGING ARCHIVE / HUANG YUXUAN</span><a href="./portfolio.html">返回作品目录 ↗</a></footer>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="packaging-lightbox" id="packaging-lightbox" aria-labelledby="packaging-lightbox-title">
+      <div class="packaging-lightbox-shell">
+        <header class="packaging-lightbox-head">
+          <div><h2 id="packaging-lightbox-title"></h2><span id="packaging-lightbox-meta"></span></div>
+          <button type="button" class="packaging-lightbox-close" aria-label="关闭大图">×</button>
+        </header>
+        <div class="packaging-lightbox-stage"><img id="packaging-lightbox-image" alt="" /></div>
+        <footer class="packaging-lightbox-foot">
+          <span id="packaging-lightbox-progress"></span>
+          <div><button type="button" data-direction="prev" aria-label="上一张">←</button><button type="button" data-direction="next" aria-label="下一张">→</button></div>
+        </footer>
+      </div>
+    </dialog>
+  </body>
+</html>

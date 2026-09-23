@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="黄虞萱其它作品，涵盖展会布展与活动摄影记录。" />
+    <title>其它作品 — 黄虞萱</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffe72e'/%3E%3Ccircle cx='50' cy='14' r='14' fill='%230875df'/%3E%3Cpath d='M32 11c13 0 22 9 22 21s-9 21-22 21S10 44 10 32s9-21 22-21zm0 11c-6 0-10 4-10 10s4 10 10 10 10-4 10-10-4-10-10-10z' fill='%23080808'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./project-15.css" />
+    <script src="./project-15.js" defer></script>
+  </head>
+  <body class="other-body">
+    <main class="page-shell">
+      <header class="site-header">
+        <div class="site-title" aria-label="DESIGN"><span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <div class="nav-links"><a href="./index.html">首页</a><span aria-hidden="true">/</span><a href="./portfolio.html" class="active">作品</a><span aria-hidden="true">/</span><a href="./about.html">关于我</a></div>
+          <a class="nav-credit nav-back" href="./portfolio.html" aria-label="返回作品页">← 返回</a>
+        </nav>
+      </header>
+
+      <div class="other-ticker" aria-label="作品集信息"><span>IDEA · DESIGN · CREATIVE</span><span>FIELD NOTES ARCHIVE</span></div>
+
+      <section class="other-hero" aria-labelledby="other-title">
+        <div class="other-shape other-shape-pink" aria-hidden="true"></div>
+        <div class="other-shape other-shape-yellow" aria-hidden="true"></div>
+        <div class="other-shape other-shape-blue" aria-hidden="true"></div>
+        <div class="other-hero-copy">
+          <h1 id="other-title"><span>OTHER</span><small>其它作品</small></h1>
+          <p>EXHIBITION · DOCUMENTARY · FIELD NOTES</p>
+        </div>
+      </section>
+
+      <section class="other-page" aria-label="其它作品展示">
+        <nav class="other-toolbar" aria-label="其它作品分类">
+          <span class="other-toolbar-label">BROWSE BY CATEGORY</span>
+          <div class="other-tabs" role="tablist">
+            <button type="button" class="other-tab is-active" role="tab" aria-selected="true" data-category="exhibition">01 展会布展</button>
+            <button type="button" class="other-tab" role="tab" aria-selected="false" data-category="activity">02 活动拍摄</button>
+          </div>
+        </nav>
+
+        <div class="other-content">
+          <header class="other-category-head" id="other-category-head">
+            <span id="other-category-index">01</span>
+            <h2 id="other-category-title">EXHIBITION <small>展会布展</small></h2>
+            <p id="other-category-note">整体空间、陈列秩序与展位细节</p>
+          </header>
+          <div id="other-gallery" aria-live="polite"></div>
+          <footer class="other-ending"><span>OTHER WORKS / HUANG YUXUAN</span><a href="./portfolio.html">返回作品目录 ↗</a></footer>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="other-lightbox" id="other-lightbox" aria-labelledby="other-lightbox-title">
+      <div class="other-lightbox-shell">
+        <header class="other-lightbox-head"><div><h2 id="other-lightbox-title"></h2><span id="other-lightbox-meta"></span></div><button type="button" class="other-lightbox-close" aria-label="关闭大图">×</button></header>
+        <div class="other-lightbox-stage"><img id="other-lightbox-image" alt="" /></div>
+        <footer class="other-lightbox-foot"><span id="other-lightbox-progress" aria-live="polite"></span><div class="other-lightbox-actions"><button type="button" data-direction="prev" aria-label="上一张">←</button><button type="button" data-direction="next" aria-label="下一张">→</button></div></footer>
+      </div>
+    </dialog>
+  </body>
+</html>

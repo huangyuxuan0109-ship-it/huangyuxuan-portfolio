@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">待填充新项目占位图</title>
+  <desc id="desc">米白色背景上的简洁几何占位图形</desc>
+  <rect width="1000" height="1000" fill="#f1f0eb"/>
+  <circle cx="740" cy="250" r="210" fill="#d8d5cc"/>
+  <rect x="120" y="660" width="760" height="2" fill="#252525" opacity=".45"/>
+  <circle cx="240" cy="660" r="8" fill="#252525"/>
+</svg>

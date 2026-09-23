@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="黄虞萱PPT设计作品展示，包含教育解决方案、地产提案与科技企业介绍。" />
+    <title>PPT设计作品 — 黄虞萱</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffe13b'/%3E%3Ccircle cx='49' cy='15' r='15' fill='%231474df'/%3E%3Cpath d='M13 12h22c11 0 17 5 17 14 0 6-3 10-8 12 7 2 10 6 10 13H43c0-6-3-8-10-8h-9v9H13V12zm11 9v13h10c5 0 7-2 7-7 0-4-2-6-7-6H24z' fill='%23111111'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./project-8.css" />
+    <script src="./project-8.js" defer></script>
+  </head>
+  <body class="ppt-page">
+    <main class="page-shell">
+      <header class="site-header">
+        <div class="site-title" aria-label="DESIGN"><span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <div class="nav-links"><a href="./index.html">首页</a><span aria-hidden="true">/</span><a href="./portfolio.html" class="active">作品</a><span aria-hidden="true">/</span><a href="./about.html">关于我</a></div>
+          <a class="nav-credit nav-back" href="./portfolio.html" aria-label="返回作品页">← 返回</a>
+        </nav>
+      </header>
+
+      <div class="ppt-ticker" aria-label="作品集信息">
+        <span>IDEA · DESIGN · CREATIVE</span>
+        <span>PRESENTATION ARCHIVE</span>
+      </div>
+
+      <section class="ppt-hero" aria-labelledby="ppt-page-title">
+        <span class="ppt-shape ppt-shape-yellow" aria-hidden="true"></span><span class="ppt-shape ppt-shape-pink" aria-hidden="true"></span><span class="ppt-shape ppt-shape-blue" aria-hidden="true"></span>
+        <div class="ppt-hero-title">
+          <p>SELECTED WORKS · PRESENTATION DESIGN</p>
+          <h1 id="ppt-page-title"><span>PRESENTATION</span><small>PPT 设计</small></h1>
+        </div>
+        <div class="ppt-hero-copy"><strong>03 SELECTED DECKS</strong></div>
+      </section>
+
+      <section class="ppt-catalog" aria-labelledby="ppt-catalog-title">
+        <header class="ppt-section-head"><h2 id="ppt-catalog-title">精选演示项目 <small>SELECTED DECKS</small></h2><span>点击封面预览 / CLICK TO PREVIEW</span></header>
+        <div class="ppt-card-grid">
+          <button class="ppt-card is-active" type="button" data-deck="education" aria-pressed="true">
+            <span class="ppt-card-art"><img src="./project-5-assets/after-school-report/slides/slide-1.png" alt="课后服务数字化监管与提质方案封面" loading="eager" fetchpriority="high" /><b>01</b></span>
+            <span class="ppt-card-copy"><span><strong>课后服务数字化监管与提质方案</strong><small>EDUCATION · SOLUTION</small></span><i aria-hidden="true">↘</i></span>
+          </button>
+          <button class="ppt-card" type="button" data-deck="sansheng" aria-pressed="false">
+            <span class="ppt-card-art is-wide"><img src="./project-8-assets/sansheng/page-01.jpg" alt="三盛国际海岸封面" loading="lazy" /><b>02</b></span>
+            <span class="ppt-card-copy"><span><strong>三盛国际海岸</strong><small>REAL ESTATE · PROPOSAL</small></span><i aria-hidden="true">↘</i></span>
+          </button>
+          <button class="ppt-card" type="button" data-deck="lumini" aria-pressed="false">
+            <span class="ppt-card-art"><img src="./project-8-assets/lumini/slide-01.jpg" alt="镭明士公司简介封面" loading="lazy" /><b>03</b></span>
+            <span class="ppt-card-copy"><span><strong>镭明士公司简介</strong><small>TECHNOLOGY · COMPANY PROFILE</small></span><i aria-hidden="true">↘</i></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="ppt-viewer-section" id="ppt-viewer" aria-labelledby="ppt-detail-title">
+        <nav class="ppt-tabs" role="tablist" aria-label="快速切换PPT项目">
+          <button class="ppt-tab is-active" type="button" role="tab" data-deck="education" aria-selected="true">课后服务</button>
+          <button class="ppt-tab" type="button" role="tab" data-deck="sansheng" aria-selected="false">三盛国际海岸</button>
+          <button class="ppt-tab" type="button" role="tab" data-deck="lumini" aria-selected="false">镭明士</button>
+        </nav>
+        <div class="ppt-viewer-grid">
+          <div class="ppt-screen-column">
+            <button class="ppt-screen" id="ppt-zoom" type="button" aria-label="查看当前页面大图">
+              <span class="ppt-loader" aria-hidden="true"></span><img id="ppt-slide-image" src="./project-5-assets/after-school-report/slides/slide-1.png" alt="课后服务数字化监管与提质方案第1页" />
+              <span class="ppt-zoom-hint">点击查看大图</span>
+            </button>
+            <p class="ppt-image-error" id="ppt-image-error" role="alert" hidden>当前页面暂时无法加载，请切换后重试。</p>
+            <div class="ppt-controls"><button type="button" id="ppt-prev" aria-label="上一页">←</button><div class="ppt-progress" aria-hidden="true"><span id="ppt-progress-bar"></span></div><span id="ppt-page-status" aria-live="polite">01 / 21</span><button type="button" id="ppt-next" aria-label="下一页">→</button></div>
+          </div>
+          <aside class="ppt-detail">
+            <div><p id="ppt-detail-index">PROJECT 01 / EDUCATION</p><h2 id="ppt-detail-title">课后服务数字化监管与提质方案</h2><span id="ppt-detail-meta">教育解决方案 · 21 PAGES</span><p id="ppt-detail-description">围绕课后服务监管、平台建设与运营提质展开的完整解决方案。</p></div>
+            <div class="ppt-thumbnails" id="ppt-thumbnails" aria-label="选择PPT页面"></div>
+          </aside>
+        </div>
+        <footer class="ppt-ending"><span>END / PRESENTATION COLLECTION</span><a href="./portfolio.html">返回作品目录 →</a></footer>
+      </section>
+    </main>
+
+    <dialog class="ppt-lightbox" id="ppt-lightbox" aria-labelledby="ppt-lightbox-title">
+      <div class="ppt-lightbox-head"><div><h2 id="ppt-lightbox-title">课后服务数字化监管与提质方案</h2><span id="ppt-lightbox-status">01 / 21</span></div><button type="button" id="ppt-lightbox-close" aria-label="关闭大图">×</button></div>
+      <div class="ppt-lightbox-stage"><img id="ppt-lightbox-image" src="./project-5-assets/after-school-report/slides/slide-1.png" alt="课后服务数字化监管与提质方案第1页大图" /></div>
+      <div class="ppt-lightbox-controls"><button type="button" id="ppt-lightbox-prev" aria-label="上一页大图">← 上一页</button><button type="button" id="ppt-lightbox-next" aria-label="下一页大图">下一页 →</button></div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="黄虞萱物料设计作品，涵盖地产现场、活动物料、教育空间与商业宣传。" />
+    <title>物料设计作品 — 黄虞萱</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffe72e'/%3E%3Ccircle cx='50' cy='14' r='14' fill='%230875df'/%3E%3Cpath d='M10 12h12l10 22 10-22h12v42H43V31L35 49h-6l-8-18v23H10z' fill='%23080808'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./project-14.css" />
+    <script src="./project-14.js" defer></script>
+  </head>
+  <body class="material-body">
+    <main class="page-shell">
+      <header class="site-header">
+        <div class="site-title" aria-label="DESIGN"><span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span></div>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <div class="nav-links"><a href="./index.html">首页</a><span aria-hidden="true">/</span><a href="./portfolio.html" class="active">作品</a><span aria-hidden="true">/</span><a href="./about.html">关于我</a></div>
+          <a class="nav-credit nav-back" href="./portfolio.html" aria-label="返回作品页">← 返回</a>
+        </nav>
+      </header>
+
+      <div class="material-ticker" aria-label="作品集信息">
+        <span>IDEA · DESIGN · CREATIVE</span>
+        <span>MATERIAL DESIGN ARCHIVE</span>
+      </div>
+
+      <section class="material-hero" aria-labelledby="material-title">
+        <div class="material-shape material-shape-pink" aria-hidden="true"></div>
+        <div class="material-shape material-shape-yellow" aria-hidden="true"></div>
+        <div class="material-shape material-shape-blue" aria-hidden="true"></div>
+        <div class="material-hero-copy">
+          <h1 id="material-title"><span>MATERIAL</span><small>物料设计</small></h1>
+          <p>BRAND MATERIAL · SPACE GRAPHICS · CAMPAIGN</p>
+        </div>
+      </section>
+
+      <section class="material-page" aria-label="物料设计作品">
+        <nav class="material-toolbar" aria-label="物料作品分类">
+          <span class="material-toolbar-label">BROWSE BY CATEGORY</span>
+          <div class="material-tabs" role="tablist">
+            <button type="button" class="material-tab is-active" role="tab" aria-selected="true" data-category="estate">01 地产现场</button>
+            <button type="button" class="material-tab" role="tab" aria-selected="false" data-category="education">02 教育空间</button>
+            <button type="button" class="material-tab" role="tab" aria-selected="false" data-category="commercial">03 商业宣传</button>
+          </div>
+        </nav>
+
+        <div class="material-content">
+          <header class="material-category-head" id="material-category-head">
+            <span class="material-category-index" id="material-category-index">01</span>
+            <h2 id="material-category-title">REAL ESTATE <small>地产现场</small></h2>
+            <p id="material-category-note">建发项目现场导视与销售物料</p>
+          </header>
+          <div id="material-gallery" aria-live="polite"></div>
+          <footer class="material-ending"><span>MATERIAL DESIGN ARCHIVE / HUANG YUXUAN</span><a href="./portfolio.html">返回作品目录 ↗</a></footer>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="material-lightbox" id="material-lightbox" aria-labelledby="material-lightbox-title">
+      <div class="material-lightbox-shell">
+        <header class="material-lightbox-head">
+          <div><h2 id="material-lightbox-title"></h2><span id="material-lightbox-meta"></span></div>
+          <button type="button" class="material-lightbox-close" aria-label="关闭大图">×</button>
+        </header>
+        <div class="material-lightbox-stage"><img id="material-lightbox-image" alt="" /></div>
+        <footer class="material-lightbox-foot">
+          <span id="material-lightbox-progress" aria-live="polite"></span>
+          <div class="material-lightbox-actions"><button type="button" data-direction="prev" aria-label="上一张">←</button><button type="button" data-direction="next" aria-label="下一张">→</button></div>
+        </footer>
+      </div>
+    </dialog>
+  </body>
+</html>
