@@ -91,6 +91,12 @@
 @media(max-width:760px){.hero h1{letter-spacing:.005em}.section-head h2{letter-spacing:.025em}.details-slide{width:70%}.details-slide.is-prev{transform:translateX(-50%) scale(.66)}.details-slide.is-next{transform:translateX(50%) scale(.66)}}
 @media(prefers-reduced-motion:reduce){.details-slide{transition:none}}
 </style>
+<style>
+/* Mobile layout refinements */
+.campaign-status span:first-child{font-size:0}.campaign-status span:first-child::after{content:"滑动切换 / SWIPE TO VIEW";font-size:11px}
+.details-carousel{display:none}.details-showcase{grid-template-columns:1fr}
+@media(max-width:760px){.campaign-grid{display:block}.campaign-side{display:none}.campaign-main{width:100%}.video-grid{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}.video-grid::-webkit-scrollbar{display:none}.video-card{flex:0 0 72vw;scroll-snap-align:start}.details-showcase{display:block}}
+</style>
 </head>
 <body>
 <div class="page" id="top">

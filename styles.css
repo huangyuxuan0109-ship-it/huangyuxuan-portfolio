@@ -434,6 +434,7 @@ a { color: inherit; }
 .panel-project:nth-child(8) img { height: clamp(250px, 28vw, 420px); }
 .portfolio-panel-dark .panel-project img { filter: saturate(.78); }
 .panel-project span { display: block; padding-top: 12px; font-size: clamp(1rem, 1.5vw, 1.35rem); font-weight: 700; }
+.mobile-panel-switch { display: none; }
 .project-after-school { position: relative; display: block; overflow: visible; }
 .project-after-school-frame { position: relative; z-index: 0; height: clamp(220px, 24vw, 370px); overflow: hidden; background: #eef1f0; }
 .project-after-school-frame::before { content: ""; position: absolute; z-index: 0; width: 68%; aspect-ratio: 1; left: 46%; top: 7%; transform: translateX(-50%); border-radius: 50%; background: #dff2fc; }
@@ -534,16 +535,19 @@ a { color: inherit; }
   .xy-poster-pair .xy-lower { margin-top: 52px; }
   .xy-solo-poster { width: 58%; margin-bottom: 90px; }
   .xy-ending { width: 58%; margin: 90px auto 0; }
-  .xy-ref-page { padding: 18px 18px 40px; }
-  .xy-ref-intro { display: block; min-height: 560px; padding-top: 100px; }
+  .xy-ref-page { padding: 18px 12px 28px; }
+  .xy-ref-intro { display: block; min-height: 430px; padding-top: 82px; }
   .xy-ref-meta { margin-top: 70px; }
-  .xy-ref-section { margin-top: 145px; }
+  .xy-ref-section { margin-top: 86px; }
   .xy-ref-head { margin-bottom: 24px; }
-  .xy-ref-triple, .xy-ref-double, .xy-ref-nature { grid-template-columns: 1fr; gap: 22px; }
+  .xy-ref-triple, .xy-ref-double, .xy-ref-nature { display: flex; grid-template-columns: none; gap: 10px; overflow-x: auto; margin-inline: -12px; padding: 0 12px 10px; scrollbar-width: none; scroll-snap-type: x mandatory; }
+  .xy-ref-triple::-webkit-scrollbar, .xy-ref-double::-webkit-scrollbar, .xy-ref-nature::-webkit-scrollbar { display: none; }
+  .xy-ref-triple > .xy-ref-media, .xy-ref-double > .xy-ref-media, .xy-ref-nature > .xy-ref-media { flex: 0 0 min(78vw, 320px); scroll-snap-align: start; }
   .xy-ref-single, .xy-ref-center-small, .xy-ref-center-wide, .xy-ref-center-poster { width: 100%; }
-  .xy-ref-one-two { gap: 35px; }
-  .xy-ref-one-two > .xy-ref-media { width: 60%; }
-  .xy-ref-one-two > div { width: 100%; gap: 22px; }
+  .xy-ref-one-two { display: flex; gap: 10px; overflow-x: auto; margin-inline: -12px; padding: 0 12px 10px; scrollbar-width: none; scroll-snap-type: x mandatory; }
+  .xy-ref-one-two::-webkit-scrollbar { display: none; }
+  .xy-ref-one-two > .xy-ref-media, .xy-ref-one-two > div .xy-ref-media { flex: 0 0 min(78vw, 320px); width: auto; scroll-snap-align: start; }
+  .xy-ref-one-two > div { display: contents; }
   .xy-ref-asym { grid-template-columns: 1fr; gap: 42px; }
   .xy-ref-copy { order: 2; }
   .xy-ref-asym > .xy-ref-media { width: 58%; margin-left: auto; order: 1; }
@@ -551,11 +555,17 @@ a { color: inherit; }
   .xy-ref-center-poster { width: 62%; margin-top: 110px; }
   .xy-ref-closing { min-height: 430px; margin-top: 170px; }
   .portfolio-split { display: block; height: auto; min-height: 0; }
+  .mobile-panel-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 18px 18px 0; padding: 6px; background: #e4e0d8; border-radius: 999px; }
+  .mobile-panel-switch button { border: 0; border-radius: 999px; padding: 12px 10px; color: #777; background: transparent; font-size: .9rem; cursor: pointer; }
+  .mobile-panel-switch button.is-active { color: #fff; background: var(--ink); }
   .portfolio-panel { height: auto; min-height: 80vh; overflow: visible; }
+  .portfolio-panel[data-panel] { display: none; }
+  .portfolio-panel[data-panel].is-mobile-active { display: block; }
   .panel-intro { font-size: clamp(1.8rem, 8vw, 3rem); }
   .panel-projects { grid-template-columns: 1fr; gap: 34px; }
   .panel-project:nth-child(n) { grid-column: auto; margin-top: 0; }
   .panel-project:nth-child(n) img { height: 280px; }
+  .portfolio-panel-dark .panel-project:nth-child(n) img { height: auto; aspect-ratio: auto; object-fit: contain; background: transparent; }
   .hero { min-height: 380px; }
   .hero-image-placeholder { width: 98vw; height: 285px; }
   .hero-outline-placeholder::before { clip-path: inset(0 8% 0 0); }

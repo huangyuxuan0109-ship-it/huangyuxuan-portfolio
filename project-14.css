@@ -307,3 +307,4 @@ body:has(.material-lightbox[open]) { overflow: hidden; }
   .material-media img { transition: none; }
   .material-card { opacity: 1; transform: none; }
 }
+@media (max-width: 640px){.material-grid{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;padding:0 2px 14px;scroll-snap-type:x mandatory;scrollbar-width:none}.material-grid::-webkit-scrollbar{display:none}.material-grid .material-card{flex:0 0 78vw;grid-column:auto;scroll-snap-align:start}.material-grid .material-card.is-wide{flex-basis:88vw}}

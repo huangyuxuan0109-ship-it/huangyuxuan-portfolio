@@ -249,3 +249,4 @@ body:has(.packaging-lightbox[open]) { overflow: hidden; }
   .packaging-card { opacity: 1; transform: none; transition: none; }
   .packaging-card-frame, .packaging-card-frame img, .packaging-card-view, .packaging-hero-image, .packaging-filter { transition: none; }
 }
+@media (max-width: 720px){.packaging-series-grid--pair,.packaging-series-grid--trio,.packaging-series-grid--grid{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;padding:0 2px 14px;scroll-snap-type:x mandatory;scrollbar-width:none}.packaging-series-grid--pair::-webkit-scrollbar,.packaging-series-grid--trio::-webkit-scrollbar,.packaging-series-grid--grid::-webkit-scrollbar{display:none}.packaging-series-grid .packaging-card{flex:0 0 78vw;grid-column:auto!important;scroll-snap-align:start}.packaging-series-grid .packaging-card-frame{aspect-ratio:1.12/1}}

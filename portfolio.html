@@ -24,8 +24,13 @@
         </nav>
       </header>
 
+      <div class="mobile-panel-switch" role="tablist" aria-label="作品页面板块切换">
+        <button type="button" class="is-active" role="tab" aria-selected="true" data-panel-target="projects">我的项目</button>
+        <button type="button" role="tab" aria-selected="false" data-panel-target="directory">作品集目录</button>
+      </div>
+
       <section class="portfolio-split" aria-label="作品集">
-        <div class="portfolio-panel portfolio-panel-light">
+        <div class="portfolio-panel portfolio-panel-light is-mobile-active" data-panel="projects">
           <p class="panel-intro">我的项目<br /><small>My Projects</small></p>
           <div class="panel-projects">
             <a class="panel-project" href="./project-detail.html"><img src="./project-detail-assets/images/page-01-no-date.png" alt="Pixelo 文具产品焕新项目" /><span>Pixelo 文具产品焕新</span></a>
@@ -40,7 +45,7 @@
             <a class="panel-project project-geography" href="./project-19.html"><img src="./project-19-assets/01_项目开场/01_系列封面_整套产品主视觉.png" alt="舌尖上的地理课项目封面" /><span>舌尖上的地理课 · 教育桌游视觉设计</span></a>
           </div>
         </div>
-        <div class="portfolio-panel portfolio-panel-dark">
+        <div class="portfolio-panel portfolio-panel-dark" data-panel="directory">
           <p class="panel-intro">作品集目录<br /><small>Portfolio Directory</small></p>
           <div class="panel-projects">
             <a class="panel-project" href="./project-11.html"><img src="./portfolio-assets/directory-1.png" alt="海报" /><span>海报 / <small>Poster</small></span></a>
@@ -53,5 +58,18 @@
         </div>
       </section>
     </main>
+    <script>
+      const panelSwitches = [...document.querySelectorAll('.mobile-panel-switch button')];
+      const portfolioPanels = [...document.querySelectorAll('.portfolio-panel[data-panel]')];
+      panelSwitches.forEach(button => button.addEventListener('click', () => {
+        const target = button.dataset.panelTarget;
+        panelSwitches.forEach(item => {
+          const active = item === button;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-selected', String(active));
+        });
+        portfolioPanels.forEach(panel => panel.classList.toggle('is-mobile-active', panel.dataset.panel === target));
+      }));
+    </script>
   </body>
 </html>

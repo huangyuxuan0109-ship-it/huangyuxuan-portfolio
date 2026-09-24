@@ -146,3 +146,4 @@ body:has(.brochure-lightbox[open]) { overflow: hidden; }
   .brochure-card::after, .brochure-cover-frame, .brochure-tab, .brochure-spread img { transition: none; }
   .brochure-loader { animation: none; }
 }
+@media (max-width: 560px){.brochure-cover-grid{display:flex;grid-template-columns:none;gap:18px;overflow-x:auto;margin-inline:-20px;padding:0 20px 14px;scroll-snap-type:x mandatory;scrollbar-width:none}.brochure-cover-grid::-webkit-scrollbar{display:none}.brochure-card{flex:0 0 64vw;width:auto;margin:0;scroll-snap-align:start}.brochure-tabs{display:flex;grid-template-columns:none;overflow-x:auto;scrollbar-width:none}.brochure-tabs::-webkit-scrollbar{display:none}.brochure-tab{flex:0 0 auto;min-height:42px;padding:8px 13px;font-size:.78rem}}

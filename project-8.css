@@ -167,3 +167,5 @@ body:has(.ppt-lightbox[open]) { overflow: hidden; }
   .ppt-card-art, .ppt-card-art img, .ppt-card-copy i, .ppt-tab, .ppt-screen img, .ppt-zoom-hint, .ppt-progress span { transition: none; }
   .ppt-loader { animation: none; }
 }
+ .ppt-hero-copy{position:absolute;left:5%;bottom:clamp(62px,8vw,108px);justify-self:start;padding-left:0}
+@media (max-width:980px){.ppt-hero-copy{position:static}}

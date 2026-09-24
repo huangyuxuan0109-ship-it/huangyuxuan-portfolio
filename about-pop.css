@@ -716,6 +716,10 @@
   .about-tool-grid { gap: 9px; }
   .about-tool { min-height: 104px; padding: 16px; }
   .about-footer { display: grid; padding-left: 18px; padding-right: 18px; line-height: 1.7; }
+  .about-contact { gap: 0; }
+  .about-contact-button { min-height: 68px; padding: 11px 14px; }
+  .about-contact-label { margin-bottom: 4px; font-size: .62rem; letter-spacing: .08em; }
+  .about-contact-value { font-size: .9rem; letter-spacing: .02em; }
 }
 
 @media (prefers-reduced-motion: reduce) {
